@@ -1,6 +1,13 @@
-var gulp = require('gulp');
-var gutil = require('gulp-util');
+    var gulp    = require('gulp');
+    var gutil    = require('gulp-util');
+    var uglify  = require('gulp-uglify');
+    var concat  = require('gulp-concat');
 
-gulp.task('default', function(){
-    // place code for your default task here
-});
+    gulp.task('concat', function () {
+        gulp.src('./src/*.js')
+            .pipe(uglify())
+            .pipe(concat('all.min.js'))
+            .pipe(gulp.dest('./build'));
+    });
+
+    gulp.task('default', ['concat']);

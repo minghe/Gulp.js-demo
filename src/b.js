@@ -1,1 +1,3 @@
-console.log('这是b文件');
+(function(){
+    console.log('这是b文件');
+})();
